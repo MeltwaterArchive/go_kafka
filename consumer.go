@@ -86,7 +86,7 @@ func (consumer *BrokerConsumer) ConsumeOnChannel(msgChan chan *Message, pollTime
                 num += 1
             })
 
-            log.Printf("err: %+v", err)
+            // log.Printf("err: %+v", err)
 
             if err != nil {
                 if err != io.EOF {
