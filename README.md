@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/jdamick/kafka.png?branch=master)](https://travis-ci.org/jdamick/kafka)
-
 # kafka - Publisher & Consumer for Kafka in Go #
 
 Kafka is a distributed publish-subscribe messaging system: (http://kafka.apache.org)
 
 Go language: (http://golang.org/) <br/>
+
+Forked from: https://github.com/jdamick/kafka/.
 
 ## Changes
 
