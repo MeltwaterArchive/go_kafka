@@ -26,9 +26,10 @@ import (
     "encoding/binary"
     "errors"
     "io"
-    "log"
     "net"
     "time"
+
+    log "github.com/Sirupsen/logrus"
 )
 
 type BrokerConsumer struct {
