@@ -94,17 +94,24 @@ func (consumer *BrokerConsumer) ConsumeOnChannel(msgChan chan *Message, pollTime
                     log.Println("Error reading from Kafka: ", err)
                 }
                 quit <- true // force quit
+                log.Println("Quit message sent")
                 break
             }
             time.Sleep(time.Millisecond * time.Duration(pollTimeoutMs))
         }
+        log.Println("Loop Exited")
         done <- true
+        log.Println("Done message sent")
     }()
     // wait to be told to stop..
+    log.Println("Waiting on Quit")
     <-quit
+    log.Println("Close connection")
     conn.Close()
     close(msgChan)
+    log.Println("Waiting on Done")
     <-done
+    log.Println("Exit consume")
     return num, err
 }
 
